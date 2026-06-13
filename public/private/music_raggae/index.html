@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reggae – Projekt Musik 8a</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Nunito:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
 
   <style>
@@ -14,55 +16,85 @@
        DESIGN TOKENS  –  Jamaikanische Flaggenfarben
        ============================================================ */
     :root {
-      --bg:        #0B1F14;
-      --bg2:       #122A1A;
-      --gold:      #F5C518;
-      --gold-dim:  rgba(245,197,24,0.25);
-      --red:       #C8102E;
-      --green:     #00853F;
-      --text:      #F0E9D2;
-      --muted:     rgba(240,233,210,0.50);
-      --card:      rgba(255,255,255,0.045);
-      --border:    rgba(245,197,24,0.22);
+      --bg: #0B1F14;
+      --bg2: #122A1A;
+      --gold: #F5C518;
+      --gold-dim: rgba(245, 197, 24, 0.25);
+      --red: #C8102E;
+      --green: #00853F;
+      --text: #F0E9D2;
+      --muted: rgba(240, 233, 210, 0.50);
+      --card: rgba(255, 255, 255, 0.045);
+      --border: rgba(245, 197, 24, 0.22);
     }
 
     /* ============================================================
        REVEAL OVERRIDES
        ============================================================ */
-    .reveal-viewport { background: var(--bg); }
+    .reveal-viewport {
+      background: var(--bg);
+    }
 
     .reveal {
       font-family: 'Nunito', sans-serif;
       color: var(--text);
     }
 
-    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4 {
       font-family: 'Righteous', cursive;
       color: var(--gold);
       text-transform: none;
       letter-spacing: 0.02em;
-      text-shadow: 0 0 50px rgba(245,197,24,0.25);
+      text-shadow: 0 0 50px rgba(245, 197, 24, 0.25);
     }
 
-    .reveal .progress { background: rgba(245,197,24,0.15); color: var(--gold); height: 4px; }
-    .reveal .controls { color: var(--gold); }
+    .reveal .progress {
+      background: rgba(245, 197, 24, 0.15);
+      color: var(--gold);
+      height: 4px;
+    }
+
+    .reveal .controls {
+      color: var(--gold);
+    }
+
     .reveal .slide-number {
       background: transparent;
       color: var(--muted);
       font-family: 'Nunito', sans-serif;
       font-size: 13px;
-      bottom: 14px; right: 18px;
+      bottom: 14px;
+      right: 18px;
     }
-    .reveal .slide-number-a { color: var(--muted); }
+
+    .reveal .slide-number-a {
+      color: var(--muted);
+    }
 
     /* ============================================================
        TRICOLOR STRIPE  (Red–Gold–Green)
        ============================================================ */
-    .stripe-top, .stripe-bottom {
-      position: absolute; left: 0; right: 0; height: 5px; z-index: 10;
+    .stripe-top,
+    .stripe-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 5px;
+      z-index: 10;
     }
-    .stripe-top    { top: 0;    background: linear-gradient(to right, var(--red) 33.33%, var(--gold) 33.33% 66.66%, var(--green) 66.66%); }
-    .stripe-bottom { bottom: 0; background: linear-gradient(to right, var(--green) 33.33%, var(--gold) 33.33% 66.66%, var(--red) 66.66%); }
+
+    .stripe-top {
+      top: 0;
+      background: linear-gradient(to right, var(--red) 33.33%, var(--gold) 33.33% 66.66%, var(--green) 66.66%);
+    }
+
+    .stripe-bottom {
+      bottom: 0;
+      background: linear-gradient(to right, var(--green) 33.33%, var(--gold) 33.33% 66.66%, var(--red) 66.66%);
+    }
 
     /* ============================================================
        TITLE SLIDE
@@ -81,21 +113,24 @@
     /* subtle green glow in background */
     .slide-title::before {
       content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,133,63,0.12) 0%, transparent 70%);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0, 133, 63, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
     /* ---- Vinyl Record ---- */
     .vinyl-wrap {
       position: relative;
-      width: 190px; height: 190px;
+      width: 190px;
+      height: 190px;
       margin: 0 auto 2rem;
       flex-shrink: 0;
     }
 
     .vinyl {
-      width: 190px; height: 190px;
+      width: 190px;
+      height: 190px;
       border-radius: 50%;
       background:
         /* center hole */
@@ -107,15 +142,14 @@
           #111 22% 23%, #191919 23% 25%, #111 25% 27%, #191919 27% 29%,
           #111 29% 31%, #191919 31% 33%, #111 33% 35%, #191919 35% 37%,
           #111 37% 39%, #191919 39% 41%, #111 41% 43%, #191919 43% 45%,
-          #111 45% 47%, #191919 47% 50%
-        ),
+          #111 45% 47%, #191919 47% 50%),
         /* outer disc */
         radial-gradient(circle at 50% 50%, #141414 0% 100%);
       box-shadow:
         0 0 0 3px #2a2a2a,
         0 0 0 5px #111,
-        0 15px 50px rgba(0,0,0,0.8),
-        0 0 35px rgba(245,197,24,0.12);
+        0 15px 50px rgba(0, 0, 0, 0.8),
+        0 0 35px rgba(245, 197, 24, 0.12);
       animation: vinyl-spin 7s linear infinite;
       position: relative;
     }
@@ -123,13 +157,17 @@
     /* label */
     .vinyl-label {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      width: 68px; height: 68px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       background: radial-gradient(circle, #006830 0%, #004020 100%);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       font-family: 'Righteous', cursive;
       font-size: 8.5px;
       color: var(--gold);
@@ -140,27 +178,37 @@
     }
 
     @keyframes vinyl-spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* needle arm */
     .needle {
       position: absolute;
-      top: -8px; right: -22px;
-      width: 3px; height: 64px;
+      top: -8px;
+      right: -22px;
+      width: 3px;
+      height: 64px;
       background: linear-gradient(to bottom, #aaa 0%, #666 100%);
       border-radius: 2px 2px 0 0;
       transform-origin: top center;
       transform: rotate(28deg);
       z-index: 5;
     }
+
     .needle::after {
       content: '';
       position: absolute;
-      bottom: -3px; left: 50%;
+      bottom: -3px;
+      left: 50%;
       transform: translateX(-50%);
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #bbb;
     }
@@ -172,7 +220,7 @@
       color: var(--gold) !important;
       letter-spacing: 0.06em;
       margin: 0 !important;
-      text-shadow: 0 0 80px rgba(245,197,24,0.35), 0 3px 0 rgba(0,0,0,0.4) !important;
+      text-shadow: 0 0 80px rgba(245, 197, 24, 0.35), 0 3px 0 rgba(0, 0, 0, 0.4) !important;
     }
 
     .title-sub {
@@ -188,7 +236,7 @@
     .title-byline {
       margin-top: 2.8rem;
       font-size: 0.8rem;
-      color: rgba(240,233,210,0.32);
+      color: rgba(240, 233, 210, 0.32);
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
@@ -208,7 +256,11 @@
     /* rainbow top border */
     .slide-content::before {
       content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
       background: linear-gradient(to right, var(--red), var(--gold), var(--green));
     }
 
@@ -231,19 +283,44 @@
     /* ============================================================
        LAYOUT HELPERS
        ============================================================ */
-    .two-col  { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; flex: 1; }
-    .col-body { display: flex; flex-direction: column; gap: 1rem; }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      flex: 1;
+    }
+
+    .col-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
     /* ---- Fact List ---- */
-    .fact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
-    .fact-list li {
-      display: flex; align-items: flex-start; gap: 0.9rem;
-      font-size: 0.98rem; line-height: 1.55; color: var(--text);
+    .fact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
     }
+
+    .fact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      font-size: 0.98rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
     .fact-list li::before {
       content: '▸';
-      color: var(--gold); flex-shrink: 0;
-      margin-top: 0.18em; font-size: 0.75rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.18em;
+      font-size: 0.75rem;
     }
 
     /* ---- Cards ---- */
@@ -252,95 +329,192 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.1rem 1.3rem;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .card::before {
       content: '';
-      position: absolute; top: 0; left: 0; bottom: 0;
-      width: 4px; border-radius: 4px 0 0 4px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
       background: var(--gold);
     }
-    .card.red-l::before    { background: var(--red); }
-    .card.green-l::before  { background: var(--green); }
 
-    .card p { margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--text); }
+    .card.red-l::before {
+      background: var(--red);
+    }
+
+    .card.green-l::before {
+      background: var(--green);
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
     .card strong {
-      display: block; margin-bottom: 0.3rem;
-      font-size: 0.72rem; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--gold);
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
     }
 
     /* ---- Grid of cards ---- */
-    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; flex: 1; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      flex: 1;
+    }
 
     /* ---- Highlight Box (big number) ---- */
     .highlight-box {
-      background: linear-gradient(135deg, rgba(245,197,24,0.08), rgba(0,133,63,0.08));
+      background: linear-gradient(135deg, rgba(245, 197, 24, 0.08), rgba(0, 133, 63, 0.08));
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 1.3rem 1.6rem;
       text-align: center;
     }
-    .highlight-box .num   { font-family: 'Righteous', cursive; font-size: 3.2rem; color: var(--gold); line-height: 1; }
-    .highlight-box .lbl   { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+    .highlight-box .num {
+      font-family: 'Righteous', cursive;
+      font-size: 3.2rem;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .highlight-box .lbl {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
 
     /* ---- UNESCO row ---- */
     .unesco-row {
-      display: flex; align-items: center; gap: 1.1rem;
-      background: rgba(245,197,24,0.07);
-      border: 1px solid rgba(245,197,24,0.18);
-      border-radius: 12px; padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      background: rgba(245, 197, 24, 0.07);
+      border: 1px solid rgba(245, 197, 24, 0.18);
+      border-radius: 12px;
+      padding: 1rem 1.4rem;
     }
-    .unesco-icon { font-size: 1.9rem; flex-shrink: 0; }
-    .unesco-row .title  { font-weight: 700; color: var(--gold); font-size: 0.92rem; }
-    .unesco-row .detail { color: var(--muted); font-size: 0.83rem; }
+
+    .unesco-icon {
+      font-size: 1.9rem;
+      flex-shrink: 0;
+    }
+
+    .unesco-row .title {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 0.92rem;
+    }
+
+    .unesco-row .detail {
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
 
     /* ---- Tradition Grid ---- */
-    .trad-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; flex: 1; }
+    .trad-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      flex: 1;
+    }
+
     .trad-card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px; padding: 1.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 1.3rem;
       text-align: center;
     }
-    .trad-icon { font-size: 2.2rem; margin-bottom: 0.6rem; display: block; }
+
+    .trad-icon {
+      font-size: 2.2rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
     .trad-card h4 {
       font-family: 'Righteous', cursive;
-      color: var(--gold) !important; font-size: 0.95rem !important;
-      margin: 0 0 0.4rem 0 !important; text-shadow: none !important;
+      color: var(--gold) !important;
+      font-size: 0.95rem !important;
+      margin: 0 0 0.4rem 0 !important;
+      text-shadow: none !important;
     }
-    .trad-card p { font-size: 0.83rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    .trad-card p {
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
 
     /* ============================================================
        OUTRO SLIDE
        ============================================================ */
     .slide-outro {
       position: relative;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      min-height: 100%; text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100%;
+      text-align: center;
       overflow: hidden;
     }
+
     .slide-outro::before {
       content: '';
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background:
-        radial-gradient(ellipse 50% 60% at 25% 50%, rgba(200,16,46,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 75% 50%, rgba(0,133,63,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245,197,24,0.05) 0%, transparent 60%);
+        radial-gradient(ellipse 50% 60% at 25% 50%, rgba(200, 16, 46, 0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 75% 50%, rgba(0, 133, 63, 0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(245, 197, 24, 0.05) 0%, transparent 60%);
       pointer-events: none;
     }
 
     /* Animated waveform */
-    .waveform { display: flex; align-items: center; gap: 4px; margin: 0 auto 1.6rem; }
+    .waveform {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 auto 1.6rem;
+    }
+
     .wb {
-      width: 5px; border-radius: 3px;
-      background: var(--gold); opacity: 0.4;
+      width: 5px;
+      border-radius: 3px;
+      background: var(--gold);
+      opacity: 0.4;
       animation: wav 1.4s ease-in-out infinite;
     }
+
     @keyframes wav {
-      0%, 100% { opacity: 0.25; transform: scaleY(0.5); }
-      50%       { opacity: 1.00; transform: scaleY(1.0); }
+
+      0%,
+      100% {
+        opacity: 0.25;
+        transform: scaleY(0.5);
+      }
+
+      50% {
+        opacity: 1.00;
+        transform: scaleY(1.0);
+      }
     }
 
     /* gradient title */
@@ -355,19 +529,37 @@
       margin-bottom: 0.8rem;
     }
 
-    .outro-sub   { font-size: 1rem; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; }
-    .outro-names { margin-top: 2.8rem; font-size: 0.78rem; color: rgba(240,233,210,0.28); letter-spacing: 0.1em; }
+    .outro-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .outro-names {
+      margin-top: 2.8rem;
+      font-size: 0.78rem;
+      color: rgba(240, 233, 210, 0.28);
+      letter-spacing: 0.1em;
+    }
 
     /* ============================================================
        SMALL INLINE HELPERS
        ============================================================ */
-    em { color: var(--gold); font-style: normal; }
-    b, strong { color: inherit; }
+    em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    b,
+    strong {
+      color: inherit;
+    }
 
     .tag {
       display: inline-block;
-      background: rgba(245,197,24,0.12);
-      border: 1px solid rgba(245,197,24,0.35);
+      background: rgba(245, 197, 24, 0.12);
+      border: 1px solid rgba(245, 197, 24, 0.35);
       color: var(--gold);
       padding: 0.18rem 0.65rem;
       border-radius: 20px;
@@ -377,318 +569,341 @@
     }
   </style>
 </head>
-<body>
-<div class="reveal">
-  <div class="slides">
 
-    <!-- ══════════════════════════════════════════════
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ══════════════════════════════════════════════
          SLIDE 1 ·  TITELFOLIE
     ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-title">
-        <div class="stripe-top"></div>
+      <section>
+        <div class="slide-title">
+          <div class="stripe-top"></div>
 
-        <!-- Vinyl-Schallplatte -->
-        <div class="vinyl-wrap">
-          <div class="vinyl">
-            <div class="vinyl-label">ONE<br>LOVE<br>REC.</div>
+          <!-- Vinyl-Schallplatte -->
+          <div class="vinyl-wrap">
+            <div class="vinyl">
+              <div class="vinyl-label">ONE<br>LOVE<br>REC.</div>
+            </div>
+            <div class="needle"></div>
           </div>
-          <div class="needle"></div>
+
+          <h1 class="title-main">REGGAE</h1>
+          <p class="title-sub">Musik · Kultur · Identität</p>
+          <p class="title-byline">Projekt Musik 8a &nbsp;·&nbsp; William · Frederick · Dominik · Friedrich</p>
+
+          <div class="stripe-bottom"></div>
         </div>
+      </section>
 
-        <h1 class="title-main">REGGAE</h1>
-        <p class="title-sub">Musik · Kultur · Identität</p>
-        <p class="title-byline">Projekt Musik 8a &nbsp;·&nbsp; William · Frederick · Dominik · Friedrich</p>
-
-        <div class="stripe-bottom"></div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════
+      <!-- ══════════════════════════════════════════════
          SLIDE 2 ·  ENTSTEHUNG
     ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 01</p>
-        <h2>Entstehung</h2>
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 01</p>
+          <h2>Entstehung</h2>
 
-        <div class="two-col">
-          <!-- left: facts -->
-          <ul class="fact-list">
-            <li>Ende der <em>1960er Jahre</em> – mitten im Aufbruch einer ganzen Generation</li>
-            <li>Entstanden in <em>Jamaika</em>, einer kleinen Insel mit enormer kultureller Strahlkraft</li>
-            <li>Entwickelt aus <em>Ska</em> und <em>Rocksteady</em> — beide ebenfalls jamaikanischen Ursprungs</li>
-            <li>
-              Erster dokumentierter Hit:<br>
-              <em>„Do the Reggay"</em> von <strong>Toots and the Maytals</strong> — 1968
-            </li>
-          </ul>
+          <div class="two-col">
+            <!-- left: facts -->
+            <ul class="fact-list">
+              <li>Ende der <span style="color: var(--gold);">1960er Jahre</span> – mitten im Aufbruch einer ganzen
+                Generation</li>
+              <li>Entstanden in<span style="color: var(--gold);">Jamaika,</span>einer kleinen Insel mit enormer
+                kultureller Strahlkraft</li>
+              <li>Entwickelt aus <span style="color: var(--gold);">Ska</span> und <span
+                  style="color: var(--gold);">Rocksteady</span>— beide ebenfalls jamaikanischen Ursprungs</li>
+              <li>
+                Erster dokumentierter Hit: <span style="color: var(--gold);">„Do the Reggay"</span> von <strong>Toots
+                  and the Maytals</strong>
+              </li>
+            </ul>
 
-          <!-- right: visual summary -->
-          <div class="col-body">
-            <div class="highlight-box">
-              <div class="num">1968</div>
-              <div class="lbl">Geburtsjahr des Reggae</div>
-            </div>
-            <div class="card green-l">
-              <p>
-                <strong>Musikalische Herkunft</strong>
-                Ska &rarr; Rocksteady &rarr; Reggae —
-                eine schrittweise Evolution des jamaikanischen Sounds
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════
-         SLIDE 3 ·  EIGENSCHAFTEN
-    ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 02</p>
-        <h2>Musikalische Eigenschaften</h2>
-
-        <div class="card-grid">
-          <div class="card">
-            <p>
-              <strong>Off-Beat „Skank"</strong>
-              Betonter Off-Beat mit Synkopen — das rhythmische Herz des Reggae, unverwechselbar und präzise
-            </p>
-          </div>
-          <div class="card red-l">
-            <p>
-              <strong>Tempo</strong>
-              Langsames, erdiges Grundtempo — kein Getriebensein, sondern bewusstes Schwingen
-            </p>
-          </div>
-          <div class="card green-l">
-            <p>
-              <strong>Bass</strong>
-              Tiefe, tragende Basslinien geben dem Sound seinen unverwechselbaren Körper und Groove
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              <strong>Instrumente &amp; Gesang</strong>
-              E-Gitarre · Bass · Schlagzeug · Keyboard · Blasinstrumente
-              — oft mehrstimmiger, harmonischer Gesang
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════
-         SLIDE 4 ·  RASTAFARI
-    ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 03</p>
-        <h2>Die Rastafari-Bewegung</h2>
-
-        <div class="col-body" style="flex:1; gap: 1rem;">
-          <div class="card">
-            <p>
-              <strong>Herkunft</strong>
-              Jamaikanische Glaubensbewegung — entstanden in den 1930ern, tief verwurzelt in der afrikanischen Diaspora
-            </p>
-          </div>
-          <div class="card green-l">
-            <p>
-              <strong>Zentraler Glaube</strong>
-              Kaiser <em>Haile Selassie I.</em>, 1930 gekrönt, gilt den Rastafari als
-              wiedergekehrter Messias und Gott — spiritueller Kern der gesamten Bewegung
-            </p>
-          </div>
-          <div class="card red-l">
-            <p>
-              <strong>Verbindung zum Reggae</strong>
-              Rastafari und Reggae sind untrennbar: die Bewegung gab dem Genre seine
-              Spiritualität, seinen Widerstandsgeist und seine politische Tiefe
-            </p>
-          </div>
-          <div style="display:flex; align-items:center; gap:1rem; padding: 0.2rem 0.4rem;">
-            <span style="font-size:1.6rem; flex-shrink:0;">🌿</span>
-            <span style="font-size:0.93rem; color:var(--text);">
-              <em>Bob Marley</em> — weltbekanntester Rastafari, Botschafter einer ganzen Bewegung
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════
-         SLIDE 5 ·  INHALT & NACHRICHT
-    ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 04</p>
-        <h2>Inhalt &amp; Nachricht</h2>
-
-        <p style="font-size:0.88rem; color:var(--muted); margin: -0.6rem 0 1rem;">
-          Reggae-Texte sind politisch und sozial — sie prangern Unrecht offen an:
-        </p>
-
-        <div class="card-grid">
-          <div class="card red-l">
-            <p>
-              <strong>Armut &amp; Soziale Ungerechtigkeit</strong>
-              Kritik an wirtschaftlicher Not und gesellschaftlichen Ungleichgewichten
-            </p>
-          </div>
-          <div class="card red-l">
-            <p>
-              <strong>Kolonialismus &amp; Sklaverei</strong>
-              Aufarbeitung der historischen Nachwirkungen von Unterdrückung und Ausbeutung
-            </p>
-          </div>
-          <div class="card red-l">
-            <p>
-              <strong>Staatliche Gewalt &amp; Korruption</strong>
-              Protest gegen Machtmissbrauch und institutionelle Ungerechtigkeit
-            </p>
-          </div>
-          <div class="card green-l">
-            <p>
-              <strong>„One Love"</strong>
-              Bob Marleys zentrales Credo: alle Menschen sind gleich —
-              Einheit, Liebe und Würde über alle Grenzen hinweg
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════
-         SLIDE 6 ·  WARUM MEHR ALS MUSIK?
-    ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 05</p>
-        <h2>Warum mehr als Musik?</h2>
-
-        <div class="col-body" style="flex:1;">
-          <ul class="fact-list">
-            <li>
-              Gab besonders <em>Schwarzen</em> in der Karibik, Großbritannien und den USA
-              eine gemeinsame <strong>Identität und Würde</strong>
-            </li>
-            <li>
-              Symbol für jamaikanische <em>Einwanderer und ihre Kinder</em> —
-              kulturelles Gedächtnis einer ganzen Generation
-            </li>
-            <li>
-              Verband verschiedene Gruppen und wirkte als
-              <em>Brücke gegen Rassismus</em>
-            </li>
-            <li>
-              Trieb <em>internationale Bewegungen</em> gegen Rassismus
-              und Diskriminierung weltweit an
-            </li>
-          </ul>
-
-          <div class="unesco-row">
-            <span class="unesco-icon">🏛️</span>
-            <div>
-              <div class="title">UNESCO-Anerkennung</div>
-              <div class="detail">
-                Seit <strong style="color:var(--text);">2018</strong> offiziell
-                <strong style="color:var(--text);">immaterielles Kulturerbe der Menschheit</strong>
+            <!-- right: visual summary -->
+            <div class="col-body">
+              <div class="highlight-box">
+                <div class="num">1968</div>
+                <div class="lbl">Geburtsjahr des Reggae</div>
+              </div>
+              <div class="card green-l">
+                <p>
+                  <strong>Musikalische Herkunft</strong>
+                  Ska &rarr; Rocksteady &rarr; Reggae —
+                  eine schrittweise Evolution des jamaikanischen Sounds
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ══════════════════════════════════════════════
+      <!-- ══════════════════════════════════════════════
+         SLIDE 3 ·  EIGENSCHAFTEN
+    ══════════════════════════════════════════════ -->
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 02</p>
+          <h2>Musikalische Eigenschaften</h2>
+
+          <div class="card-grid">
+            <div class="card">
+              <p>
+                <strong>Off-Beat „Skank"</strong>
+                Betonter Off-Beat mit Synkopen gibt dem Reggae den unverwechselbaren Rythmus
+              </p>
+            </div>
+            <div class="card red-l">
+              <p>
+                <strong>Tempo</strong>
+                Langsames, entspanntes Grundtempo, kein Getriebensein, meist leichter Swing
+              </p>
+            </div>
+            <div class="card green-l">
+              <p>
+                <strong>Bass</strong>
+                Tiefe, durchgehende Basslinien geben der Musik einen besonderen Groove
+              </p>
+            </div>
+            <div class="card">
+              <p>
+                <strong>Instrumente &amp; Gesang</strong>
+                E-Gitarre · Bass · Schlagzeug · Keyboard · Blasinstrumente
+                oft mehrstimmiger, harmonischer Gesang
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════
+         SLIDE 4 ·  RASTAFARI
+    ══════════════════════════════════════════════ -->
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 03</p>
+          <h2>Die Rastafari-Bewegung</h2>
+
+          <div class="col-body" style="flex:1; gap: 1rem;">
+            <div class="card">
+              <p>
+                <strong>Herkunft</strong>
+                Jamaikanische Glaubensbewegung entstanden in den 1930ern durch die afrikanische Kulturtrennung
+              </p>
+            </div>
+            <div class="card green-l">
+              <p>
+                <strong>Zentraler Glaube</strong>
+                Äthiopischer Kaiser <em>Haile Selassie I.</em>, 1930 gekrönt, gilt als
+                wiedergekehrter Messias und Gott und spiritueller Kern der gesamten Bewegung
+              </p>
+            </div>
+            <div class="card red-l">
+              <p>
+                <strong>Verbindung zum Reggae</strong>
+                Rastafari und Reggae sind untrennbar: die Bewegung gab dem Genre seine
+                Spiritualität; fast alle Reggae-Musiker waren Rastafari
+              </p>
+            </div>
+            <div style="display:flex; align-items:center; gap:1rem; padding: 0.2rem 0.4rem;">
+              <span style="font-size:1.6rem; flex-shrink:0;">🌿</span>
+              <span style="font-size:1rem; color:var(--text);">
+                <em>Bob Marley</em> weltbekanntester Rastafari, Botschafter einer ganzen Bewegung
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════
+         SLIDE 5 ·  INHALT & NACHRICHT
+    ══════════════════════════════════════════════ -->
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 04</p>
+          <h2>Inhalt &amp; Nachricht</h2>
+
+          <p style="font-size:0.88rem; color:var(--muted); margin: -0.6rem 0 1rem;">
+            Reggae-Texte sind meist kritisch: sie prangern politisches und soziales Unrecht offen an
+          </p>
+
+          <div class="card-grid">
+            <div class="card green-l">
+              <p>
+                <strong>Armut &amp; Soziale Ungerechtigkeit</strong>
+                Kritik an wirtschaftlicher Not und gesellschaftlichen Ungleichgewichten
+              </p>
+            </div>
+            <div class="card red-l">
+              <p>
+                <strong>Kolonialismus &amp; Sklaverei</strong>
+                Aufarbeitung der historischen Nachwirkungen von Unterdrückung und Ausbeutung
+              </p>
+            </div>
+            <div class="card red-l">
+              <p>
+                <strong>Staatliche Gewalt &amp; Korruption</strong>
+                Protest gegen Machtmissbrauch und institutionelle Ungerechtigkeit
+              </p>
+            </div>
+            <div class="card green-l">
+              <p>
+                <strong>„One Love"</strong>
+                Bob Marleys zentrales Credo: alle Menschen sind gleich;
+                Einheit, Liebe und Würde über alle Grenzen hinweg
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════
+         SLIDE 6 ·  WARUM MEHR ALS MUSIK?
+    ══════════════════════════════════════════════ -->
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 05</p>
+          <h2>Mehr als nur Musik?</h2>
+
+          <p style="font-size:0.88rem; color:var(--muted); margin: -0.6rem 0 1rem;">
+            Reggae vereint Leute in der ganzen Welt und ist ein entscheidender Faktor im Kampf gegen Rassismus
+          </p>
+
+          <div class="col-body" style="flex:1;">
+            <ul class="fact-list">
+              <li>
+                Gab besonders <em>Immigranten</em> in der Karibik, Großbritannien und den USA
+                eine gemeinsame <strong>Identität und Würde</strong>
+              </li>
+              <li>
+                Bekannt als Musik der jamaikanischen <em>Einwanderer und ihren Kindern</em>
+                – kulturelles Gedächtnis einer ganzen Generation
+              </li>
+              <li>
+                Verband verschiedenste Gruppen und wirkte als
+                <em>Brücke gegen Rassismus</em>
+              </li>
+              <li>
+                Trieb <em>internationale Bewegungen</em> gegen Rassismus
+                und Diskriminierung weltweit an
+              </li>
+            </ul>
+
+            <div class="unesco-row">
+              <span class="unesco-icon"><img src="multimedia/unesco-logo-png_seeklogo-144853.png" style="
+              width: 67px;
+              border-radius: 7px;"></span>
+              <div>
+                <div class="title">UNESCO-Anerkennung</div>
+                <div class="detail">
+                  Seit <strong style="color:var(--text);">2018</strong> offiziell
+                  <strong style="color:var(--text);">immaterielles Kulturerbe der Menschheit</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════
          SLIDE 7 ·  TRADITIONEN
     ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-content">
-        <p class="slide-eyebrow">Kapitel 06</p>
-        <h2>Traditionen &amp; Bräuche</h2>
+      <section>
+        <div class="slide-content">
+          <p class="slide-eyebrow">Kapitel 06</p>
+          <h2> Trends &amp; Traditionen</h2>
 
-        <div class="trad-grid">
-          <div class="trad-card">
-            <span class="trad-icon">🦁</span>
-            <h4>Dreadlocks</h4>
-            <p>Rastalocken als Symbol des Widerstands gegen gesellschaftliche Normen — sichtbares Bekenntnis zur Bewegung</p>
-          </div>
-          <div class="trad-card">
-            <span class="trad-icon">🌱</span>
-            <h4>Ital-Ernährung</h4>
-            <p>Ausschließlich unverarbeitete, vegane Lebensmittel — enge spirituelle Verbindung mit Natur und Reinheit</p>
-          </div>
-          <div class="trad-card">
-            <span class="trad-icon">🌿</span>
-            <h4>Ganja</h4>
-            <p>Cannabis als sakramentales Ritual der Rastafari — spirituelle Praxis im gemeinschaftlichen Gottesdienst</p>
-          </div>
-          <div class="trad-card">
-            <span class="trad-icon">✌️</span>
-            <h4>One-Love-Gruß</h4>
-            <p>Friedensgruß unter Gleichgesinnten — Ausdruck von Einheit, gegenseitigem Respekt und Liebe</p>
+          <div class="trad-grid">
+            <div class="trad-card">
+              <span class="trad-icon">🦁</span>
+              <h4>Dreadlocks</h4>
+              <p>Rastalocken als Symbol des Widerstands gegen gesellschaftliche Normen, zeigt sichtbares Bekenntnis zur
+                Reggae und Rastafari-Bewegung</p>
+            </div>
+            <div class="trad-card">
+              <span class="trad-icon">🌱</span>
+              <h4>Ital-Ernährung</h4>
+              <p>Ausschließlich unverarbeitete, vegane Lebensmittel; signalisiert eine enge spirituelle Verbindung mit
+                der Natur und Reinheit
+              </p>
+            </div>
+            <div class="trad-card">
+              <span class="trad-icon">🌿</span>
+              <h4>Ganja</h4>
+              <p>Konsum von Cannabis als sakramentales Ritual der Rastafari — spirituelle Praxis im gemeinschaftlichen
+                Gottesdienst
+              </p>
+            </div>
+            <div class="trad-card">
+              <span class="trad-icon">✌️</span>
+              <h4>One-Love-Gruß</h4>
+              <p>Friedensgruß unter Reggae-Liebhabern, erfunden von Bob Marley; ein Ausdruck von Einheit, gegenseitigem
+                Respekt und Liebe</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ══════════════════════════════════════════════
+      <!-- ══════════════════════════════════════════════
          SLIDE 8 ·  OUTRO
     ══════════════════════════════════════════════ -->
-    <section>
-      <div class="slide-outro">
-        <div class="stripe-top"></div>
+      <section>
+        <div class="slide-outro">
+          <div class="stripe-top"></div>
 
-        <!-- animated waveform -->
-        <div class="waveform">
-          <div class="wb" style="height:12px; animation-delay:0.00s;"></div>
-          <div class="wb" style="height:22px; animation-delay:0.10s;"></div>
-          <div class="wb" style="height:34px; animation-delay:0.20s;"></div>
-          <div class="wb" style="height:18px; animation-delay:0.30s;"></div>
-          <div class="wb" style="height:42px; animation-delay:0.40s;"></div>
-          <div class="wb" style="height:28px; animation-delay:0.50s;"></div>
-          <div class="wb" style="height:48px; animation-delay:0.60s;"></div>
-          <div class="wb" style="height:30px; animation-delay:0.70s;"></div>
-          <div class="wb" style="height:38px; animation-delay:0.80s;"></div>
-          <div class="wb" style="height:20px; animation-delay:0.90s;"></div>
-          <div class="wb" style="height:28px; animation-delay:1.00s;"></div>
-          <div class="wb" style="height:14px; animation-delay:1.10s;"></div>
+          <!-- animated waveform -->
+          <div class="waveform">
+            <div class="wb" style="height:12px; animation-delay:0.00s;"></div>
+            <div class="wb" style="height:22px; animation-delay:0.10s;"></div>
+            <div class="wb" style="height:34px; animation-delay:0.20s;"></div>
+            <div class="wb" style="height:18px; animation-delay:0.30s;"></div>
+            <div class="wb" style="height:42px; animation-delay:0.40s;"></div>
+            <div class="wb" style="height:28px; animation-delay:0.50s;"></div>
+            <div class="wb" style="height:48px; animation-delay:0.60s;"></div>
+            <div class="wb" style="height:30px; animation-delay:0.70s;"></div>
+            <div class="wb" style="height:38px; animation-delay:0.80s;"></div>
+            <div class="wb" style="height:20px; animation-delay:0.90s;"></div>
+            <div class="wb" style="height:28px; animation-delay:1.00s;"></div>
+            <div class="wb" style="height:14px; animation-delay:1.10s;"></div>
+          </div>
+
+          <div class="outro-word">One Love.</div>
+          <p class="outro-sub">Reggae — mehr als Musik</p>
+          <p class="outro-names">
+            William · Frederick · Dominik · Friedrich
+            &nbsp;|&nbsp; Klasse 8a · Musik Howald
+          </p>
+
+          <div class="stripe-bottom"></div>
         </div>
+        <div>
+          <iframe width="800" height="400" src="https://www.youtube.com/embed/-cY0MR-Ddd0"
+            title="Bob Marley - One Love 1984 (Official Music Video) Remastered @Videos80s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+           gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+      </section>
 
-        <div class="outro-word">One Love.</div>
-        <p class="outro-sub">Reggae — mehr als Musik</p>
-        <p class="outro-names">
-          William · Frederick · Dominik · Friedrich
-          &nbsp;|&nbsp; Klasse 8a · Musik Howald
-        </p>
+    </div><!-- /.slides -->
+  </div><!-- /.reveal -->
 
-        <div class="stripe-bottom"></div>
-      </div>
-    </section>
-
-  </div><!-- /.slides -->
-</div><!-- /.reveal -->
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
-<script>
-  Reveal.initialize({
-    hash: true,
-    slideNumber: 'c/t',
-    transition: 'fade',
-    transitionSpeed: 'slow',
-    backgroundTransition: 'fade',
-    controls: true,
-    progress: true,
-    center: false,
-    width: 1280,
-    height: 720,
-    margin: 0,
-    plugins: []
-  });
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      transition: 'fade',
+      transitionSpeed: 'slow',
+      backgroundTransition: 'fade',
+      controls: true,
+      progress: true,
+      center: false,
+      width: 1280,
+      height: 720,
+      margin: 0,
+      plugins: []
+    });
+  </script>
 </body>
+
 </html>
